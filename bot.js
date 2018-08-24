@@ -257,7 +257,25 @@ client.on('guildMemberAdd', member => {
 
 
 
+const Discord - require("discord.js");
 
+const TOKEN = "NDY5NTA4OTY1MDQ3MjA1OTA4.DmHYwQ.fLj42Zm8Eh3H_XREqm2rOBhn1qc";
+
+var bot = new Discord.client();
+
+bot.on("ready", function() {
+    console.log("Ready");
+});
+
+bot.on("mssage", function(message) {
+  if (message.author.equals(bot.user)) return;
+
+  if (message.content == "هلا") {
+      message.channel.sendMessage("هلا والله");
+  }
+));
+
+bot.login(TOKEN);
 
 
 
