@@ -132,7 +132,7 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {
-client.user.setGame(`HD SYSTEM`,'https://www.twitch.tv/hmamkhalid');                   client.user.setGame(`HD SYSTEM`,'https://www.twitch.tv/hmamkhalid');
+client.user.setGame(`HD SYSTEM`,'https://www.twitch.tv/hmamkhalid');                   client.user.setGame(`بوت خيالي`,'https://www.twitch.tv/hmamkhalid');
 });
 
 
@@ -198,14 +198,6 @@ m.sendMessage(args)
 
 
 
-const child_process = require("child_process");
- client.on('ready' , function (){
-var time = 7200000;
-client.setInterval(function() {
-   client.destroy();
-       child_process.fork(__dirname + "/Max.js");
- }, time);
-});
 
 
 
