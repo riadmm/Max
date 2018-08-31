@@ -4,21 +4,6 @@ const client = new Discord.Client();
 
 
 
-client.on('ready', () => {
-  console.log('╔[════════════════════════════════════]╗');
-  console.log('')
-  console.log('            ╔[════════════]╗')
-  console.log('              Bot Is Online')
-  console.log('            ╚[════════════]╝')
-  console.log('')
-  console.log(`Logged in as ${client.user.tag}!`);
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log('')
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log('')
-  console.log('╚[════════════════════════════════════]╝')
-});
 
 
 
@@ -35,50 +20,38 @@ client.on('ready', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-client.on('ready', () => {
-client.user.setGame(`بيني وبينك القاء واحد`,'https://www.twitch.tv/hmamkhalid');                   client.user.setGame(`بوت خيالي`,'https://www.twitch.tv/hmamkhalid');
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const developers = ["394715584421429260"]
+const adminprefix = "-";
 client.on('message', message => {
-            if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('!bc')){
- if(!message.author.id === '406451228004974603') return;
-message.channel.sendMessage('جار ارسال الرسالة |?')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'ply')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+     if (message.content === (adminprefix + "leave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'ls')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**✅   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(`**✅**`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
 
@@ -87,12 +60,18 @@ m.sendMessage(args)
 
 
 
-
-
-
-
-
-
+client.on("message", async message => {
+if(message.content.startsWith("-embed")) {
+if (message.author.id !== "394715584421429260") return;
+let args = message.content.split(" ").slice(1).join(" ")
+if(!args) return message.reply("Romz");
+message.delete();
+var emb = new  Discord.RichEmbed()
+  .setColor('RANDOM')
+  .setDescription(args);
+message.channel.send(emb)
+}
+})
 
 
 
