@@ -41,7 +41,7 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-if (command == "embed") {
+if (command == "_embed") {
     let say = new Discord.RichEmbed()
   .setThumbnail(message.author.avatarURL)
   .setAuthor(message.author.username)
@@ -51,7 +51,6 @@ if (command == "embed") {
     message.delete();
   }
   });
-
 
 
 
