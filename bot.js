@@ -4,19 +4,32 @@ const client = new Discord.Client();
 
 
 
-client.on('message' , message => {
-    if(message.content.includes === 'هلا') {
-    message.channel.send(`هلا والله`);
-    }
-     });
+    client.on('message', msg => {
+  if (msg.content === 'هلا') {
+    msg.reply('هلا والله فيك');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'سلام عليكم') {
+    msg.reply('عليكم السلام مين الحلو السكر هذا الي جا');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'باك') {
+    msg.reply('ولكم');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'تسلم') {
+    msg.reply('الله يسلمك')
+  }
+});
 
-client.on('message' , message => {
-    if(message.content.includes === 'سلام عليكم') {
-    message.channel.send(`عليكم السلام`);
-    }
-     });
-
-
+client.on('message', msg => {
+  if (msg.content === 'تسلم يصحبي') {
+    msg.reply('الله يسلمك');
+  }
+});
 
 
 const developers = ["394715584421429260"]
