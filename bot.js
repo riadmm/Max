@@ -33,24 +33,6 @@ client.on('message', msg => {
 
 
 
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-if (command == "_embed") {
-    let say = new Discord.RichEmbed()
-  .setThumbnail(message.author.avatarURL)
-  .setAuthor(message.author.username)
-    .setDescription(args.join("  "))
-    .setColor(0x06DF00)
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-  });
 
 
 
