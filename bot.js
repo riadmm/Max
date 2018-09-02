@@ -4,18 +4,17 @@ const client = new Discord.Client();
 
 
 
+client.on('message' , message => {
+    if(message.content.includes === 'هلا') {
+    message.channel.send(`هلا والله`);
+    }
+     });
 
-
-
-
-
-
-
-
-
-
-
-
+client.on('message' , message => {
+    if(message.content.includes === 'سلام عليكم') {
+    message.channel.send(`عليكم السلام`);
+    }
+     });
 
 
 
