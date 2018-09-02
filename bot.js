@@ -38,29 +38,28 @@ client.on('message', msg => {
 
 
 const developers = ["394715584421429260"]
-const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'ply')) {
+  if (message.content.startsWith(adminprefix + 'بلاينق')) {
     client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
+      message.channel.send(`**تم تغيير البلاينق مبرووك   ${argresult}**`)
   } else 
      if (message.content === (adminprefix + "leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
+  if (message.content.startsWith(adminprefix + 'واتشينق')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
+      message.channel.send(`**تم تغيير الواتشينق مبرووك   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
+  if (message.content.startsWith(adminprefix + 'لسننق')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
+      message.channel.send(`**تم تغيير اللسننق مبروووك   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
+  if (message.content.startsWith(adminprefix + 'ستريمنق')) {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
+      message.channel.send(`**تم تغيير التويتش مبروووك**`)
   }
   if (message.content.startsWith(adminprefix + 'setname')) {
   client.user.setUsername(argresult).then
