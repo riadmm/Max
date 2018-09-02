@@ -36,8 +36,8 @@ client.on('message', msg => {
 
 
 
-
 const developers = ["394715584421429260"]
+const prefix = "-"
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
