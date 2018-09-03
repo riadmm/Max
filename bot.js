@@ -37,27 +37,27 @@ client.on('message', msg => {
 
 
 const developers = ["394715584421429260"]
-const prefix = "-"
+const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
       
-  if (message.content.startsWith(adminprefix + 'بلاينق')) {
+  if (message.content.startsWith(adminprefix + 'ply')) {
     client.user.setGame(argresult);
       message.channel.send(`**تم تغيير البلاينق مبرووك   ${argresult}**`)
   } else 
      if (message.content === (adminprefix + "leave")) {
     message.guild.leave();        
   } else  
-  if (message.content.startsWith(adminprefix + 'واتشينق')) {
+  if (message.content.startsWith(adminprefix + 'wt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
       message.channel.send(`**تم تغيير الواتشينق مبرووك   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'لسننق')) {
+  if (message.content.startsWith(adminprefix + 'ls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
       message.channel.send(`**تم تغيير اللسننق مبروووك   ${argresult}**`)
   } else 
-  if (message.content.startsWith(adminprefix + 'ستريمنق')) {
+  if (message.content.startsWith(adminprefix + 'st')) {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
       message.channel.send(`**تم تغيير التويتش مبروووك**`)
   }
