@@ -74,6 +74,19 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 
 
 
+client.on('message', message => {
+     if (message.content === "-سيرفرات") {
+         if(!message.channel.guild) return;
+     let embed = new Discord.RichEmbed()
+  .setColor("RANDOM") 
+  .addField("**سيرفرات يلي البوت موجود فيها: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
 
 
 client.on("message", async message => {
