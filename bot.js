@@ -97,18 +97,20 @@ client.on('message', message => {
 
 
 
+
 client.on("message", async message => {
 if(message.content.startsWith("-embed")) {
 let args = message.content.split(" ").slice(1).join(" ")
-if(message.member.id != "394715584421429260") return;
 if(!args) return message.reply("Romz");
 message.delete();
 var emb = new  Discord.RichEmbed()
-  .setColor('red')
+  .setColor('RANDOM')
   .setDescription(args);
 message.channel.send(emb)
 }
 })
+
+    
 
 
 
