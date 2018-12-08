@@ -109,7 +109,6 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.on("message", message => {
   const args = message.content.split(" ").slice(1);
   if (message.content.startsWith(prefix + "-eval")) {
     if(message.author.id !== '466007216546119681') return;
