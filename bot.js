@@ -69,7 +69,7 @@ client.on('guildMemberAdd', member => {
     });
    
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', '♛『five』♛');
+    let channel = member.guild.channels.find('name', 'demons');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
     let embed = new Discord.RichEmbed()
@@ -95,32 +95,28 @@ client.on('guildMemberAdd', member => {
 
 
 client.on('message', message => {
-    var prefix = "+";
-    
-        if (message.author.id === client.user.id) return;
-        if (message.guild) {
-       let embed = new Discord.RichEmbed()
-        let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
-        if (!args[1]) {
-    message.channel.send("**f!bc <message>**");
-    return;
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + '+bc') {
+    if (!args[1]) {
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            var bc = new Discord.RichEmbed()
+            .addField(' » الرسالة : ', args)
+            .setColor('#ff0000')
+            // m.send(`[${m}]`);
+            m.send(`${m}`,{embed: bc});
+        });
     }
-            message.guild.members.forEach(m => {
-       if(!message.member.hasPermission('ADMINISTRATOR')) return;
-                var bc = new Discord.RichEmbed()
-                .addField('» السيرفر :', `${message.guild.name}`)
-                .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-                .addField(' » الرسالة : ', args)
-                .setColor('#ff0000')
-                // m.send(`[${m}]`);
-                m.send(`${m}`,{embed: bc});
-            });
-        }
-        } else {
-            return;
-        }
-    });
+    } else {
+        return;
+    }
+});
+
 
 
 
