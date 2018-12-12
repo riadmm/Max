@@ -75,7 +75,7 @@ client.on('guildMemberAdd', member => {
 client.on('message',async message => {
   if(message.content === '+لعب') {
     var user = message.mentions.users.first();
-    if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**\`ADMINISTRATOR\`لا توجد لديك صلاحية `**');
+    if(!message.member.hasPermission('Speak')) return message.channel.send('❌|**\`Speak\`لا توجد لديك صلاحية `**');
     if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
     const guild = message.guild;
 
